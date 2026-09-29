@@ -1,0 +1,42 @@
+---
+{
+  "title": "Code Reader",
+  "slug": "code-reader",
+  "summary": "A document reader that turns PDF and Word files into speech, so you can follow the text at your own pace.",
+  "description": "A document reader that turns PDF and Word files into speech, so you can follow the text at your own pace.",
+  "date": "2026-09-29",
+  "year": 2026,
+  "category": "web-apps",
+  "tags": ["web-apps", "code-reader"],
+  "stack": ["JavaScript", "HTML", "CSS", "Web Speech API"],
+  "status": "published",
+  "featured": true,
+  "order": 1,
+  "role": "Independent development",
+  "repositoryVisibility": "unlisted",
+}
+---
+
+## Overview
+
+Code Reader grew out of a need for a more flexible way to read documents. It lets readers listen to text without continuously looking at a screen.
+
+## Problem
+
+Long documents are not always comfortable to read in one sitting. Readers need control to pause, continue, and return to the parts that matter.
+
+## Approach
+
+The interface is designed for PDF and DOCX input, a text preview, and start, pause, resume, and stop controls. Page-range selection limits the section to be read.
+
+## Technical decisions
+
+The application uses HTML, CSS, and JavaScript. Speech relies on browser or device capabilities, so available voices and languages can vary.
+
+The initial project is contained in a `dist` folder and can be tested locally with a simple HTTP server.
+
+## Limitations and further work
+
+Scanned documents require OCR to extract text. OCR support and consistent voice behavior across browsers require separate verification. This case study does not include accessibility or performance test results.
+
+> The date above is the documentation date. This summary uses owner-provided information; original product assets and test reports are not attached.

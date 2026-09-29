@@ -1,0 +1,46 @@
+---
+{
+  "title": "AI Tools Sentiment Analysis",
+  "slug": "ai-tools-sentiment",
+  "summary": "Exploring comments about AI tools and comparing three sentiment classification models.",
+  "description": "Exploring comments about AI tools and comparing three sentiment classification models.",
+  "date": "2026-09-29",
+  "year": 2026,
+  "category": "data-science",
+  "tags": ["data-science", "ai-tools-sentiment"],
+  "stack": ["Python", "Google Colab", "TF-IDF", "scikit-learn"],
+  "status": "published",
+  "featured": true,
+  "order": 2,
+  "role": "Independent development",
+  "repositoryVisibility": "unlisted",
+}
+---
+
+## Question
+
+How does sentiment about AI tools vary by tool, source, and time? This project also compares classification approaches for positive, neutral, and negative labels.
+
+## Data and labels
+
+The project uses the _AI Coding & Chat Tool Sentiment_ dataset, drawing on Reddit and Hacker News conversations. Fields include the tool, title, text, timestamp, and `sentiment_score`.
+
+Three-class labels are derived from the sentiment score. Numeric thresholds and the number of rows remaining after cleaning must be checked against the notebook before being reported as final results.
+
+## Analysis workflow
+
+Data-quality checks precede exploration of sentiment distributions. Text is represented with TF-IDF, and models are compared using a stratified data split.
+
+The compared models are Multinomial Naive Bayes, Logistic Regression, and Linear SVM. Confusion matrices help identify commonly confused classes.
+
+## Evaluation decisions
+
+Accuracy alone is insufficient. Macro F1, per-class metrics, and error analysis are needed to understand class imbalance.
+
+Features must be fitted only on training data to avoid leaking test information into training.
+
+## Limitations
+
+Score-derived labels are not independent human annotations. Forum comments are also not representative of all AI-tool users. Evaluation figures and charts are not attached to this version of the case study.
+
+> The date above is the documentation date. This summary uses owner-provided information; original product assets and test reports are not attached.

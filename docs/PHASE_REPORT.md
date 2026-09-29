@@ -1,3 +1,5 @@
+> Arsip laporan Phase 0–1. Status terbaru ada di [PHASE_2_REPORT.md](PHASE_2_REPORT.md).
+
 # Phase 0–1 report — 29 September 2026
 
 ## Phase 0

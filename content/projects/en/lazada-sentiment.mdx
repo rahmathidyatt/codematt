@@ -1,0 +1,40 @@
+---
+{
+  "title": "Lazada Review Sentiment Analysis",
+  "slug": "lazada-sentiment",
+  "summary": "Processing Lazada app reviews and exploring sentiment classification with KNN.",
+  "description": "Processing Lazada app reviews and exploring sentiment classification with KNN.",
+  "date": "2026-09-29",
+  "year": 2026,
+  "category": "machine-learning",
+  "tags": ["machine-learning", "lazada-sentiment"],
+  "stack": ["Python", "KNN", "Sastrawi", "scikit-learn"],
+  "status": "published",
+  "featured": false,
+  "order": 6,
+  "role": "Independent development",
+  "repositoryVisibility": "unlisted",
+}
+---
+
+## Question
+
+How can app reviews be grouped into positive, neutral, and negative sentiment?
+
+## Data and labels
+
+Reviews come from Google Play through `google-play-scraper`. Labels are mapped from ratings: one or two stars are negative, three stars neutral, and four or five stars positive.
+
+## Text processing
+
+Indonesian text is cleaned and processed with Sastrawi. Text representations are then used for K-Nearest Neighbors classification.
+
+## Considerations
+
+A rating does not always align with the written review. Mapping ratings to labels is a practical approach, but it is not a substitute for human sentiment annotation.
+
+## Result limitations
+
+This case study does not yet include the notebook, data split, and reproducible evaluation report. It therefore does not present an accuracy figure as a verified final result.
+
+> The date above is the documentation date. This summary uses owner-provided information; original product assets and test reports are not attached.

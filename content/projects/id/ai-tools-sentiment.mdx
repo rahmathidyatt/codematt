@@ -1,0 +1,46 @@
+---
+{
+  "title": "AI Tools Sentiment Analysis",
+  "slug": "ai-tools-sentiment",
+  "summary": "Menelaah komentar tentang alat AI dan membandingkan tiga model klasifikasi sentimen.",
+  "description": "Menelaah komentar tentang alat AI dan membandingkan tiga model klasifikasi sentimen.",
+  "date": "2026-09-29",
+  "year": 2026,
+  "category": "data-science",
+  "tags": ["data-science", "ai-tools-sentiment"],
+  "stack": ["Python", "Google Colab", "TF-IDF", "scikit-learn"],
+  "status": "published",
+  "featured": true,
+  "order": 2,
+  "role": "Pengembangan mandiri",
+  "repositoryVisibility": "unlisted",
+}
+---
+
+## Pertanyaan
+
+Bagaimana sentimen komentar mengenai alat AI berbeda menurut alat, sumber, dan waktu? Proyek ini juga membandingkan pendekatan klasifikasi untuk label positif, netral, dan negatif.
+
+## Data dan definisi label
+
+Dataset yang digunakan adalah _AI Coding & Chat Tool Sentiment_, dengan sumber percakapan Reddit dan Hacker News. Kolom mencakup alat, judul, teks, waktu, dan `sentiment_score`.
+
+Label tiga kelas diturunkan dari skor sentimen. Batas numerik label dan jumlah baris setelah pembersihan perlu dicocokkan kembali dengan notebook sebelum dilaporkan sebagai hasil final.
+
+## Alur analisis
+
+Pemeriksaan kualitas data mendahului eksplorasi distribusi sentimen. Teks diproses menjadi fitur TF-IDF, lalu model dibandingkan menggunakan pembagian data berstrata.
+
+Model yang dibandingkan adalah Multinomial Naive Bayes, Logistic Regression, dan Linear SVM. Confusion matrix membantu melihat kelas mana yang masih sering tertukar.
+
+## Keputusan evaluasi
+
+Perbandingan tidak cukup hanya memakai akurasi. Macro F1, metrik per kelas, dan analisis kesalahan diperlukan untuk memahami pengaruh ketidakseimbangan kelas.
+
+Fitur harus dipelajari hanya dari data latih agar informasi data uji tidak bocor ke proses pelatihan.
+
+## Batasan
+
+Label berbasis skor bukan anotasi manusia yang independen. Komentar di forum juga bukan representasi seluruh pengguna alat AI. Metrik dan grafik hasil belum dilampirkan pada versi case study ini.
+
+> Tanggal di atas adalah tanggal dokumentasi. Ringkasan disusun dari informasi pemilik; aset dan hasil uji produk asli belum dilampirkan.

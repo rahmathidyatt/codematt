@@ -1,0 +1,40 @@
+---
+{
+  "title": "Data Lab",
+  "slug": "data-lab",
+  "summary": "A data-processing workspace with quality checks and downloadable portable sessions.",
+  "description": "A data-processing workspace with quality checks and downloadable portable sessions.",
+  "date": "2026-09-29",
+  "year": 2026,
+  "category": "data-analysis",
+  "tags": ["data-analysis", "data-lab"],
+  "stack": ["Python", "Streamlit", "Pandas"],
+  "status": "in-progress",
+  "featured": false,
+  "order": 4,
+  "role": "Independent development",
+  "repositoryVisibility": "unlisted",
+}
+---
+
+## Goal
+
+Data Lab brings together the first steps of working with a dataset: opening a file, understanding its structure, and spotting quality issues before deeper analysis.
+
+## Foundation
+
+Phase 1 focuses on CSV and Excel uploads, sheet selection, previews, column-type inspection, missing values, duplicates, and internal row identities.
+
+## Portable sessions
+
+Permanent server history is not a foundation requirement. Instead, session checkpoints can be exported and imported so work remains portable.
+
+## Security decisions
+
+Checkpoint archives need bounds on file sizes, member counts, and total decompressed data. Paths escaping the destination, symlinks, and invalid archive members must be rejected.
+
+## Status
+
+The foundation has been reported as working. Further modules are being developed incrementally. This portfolio does not publish user-uploaded data or claim permanent session storage.
+
+> The date above is the documentation date. This summary uses owner-provided information; original product assets and test reports are not attached.

@@ -1,50 +1,62 @@
-import type { Metadata } from "next";
-import localFont from "next/font/local";
-import { Navigation } from "@/components/navigation";
-import { Footer } from "@/components/footer";
+import type { Metadata, Viewport } from "next";
+import { GeistSans } from "geist/font/sans";
+import { GeistMono } from "geist/font/mono";
+
 import { ThemeProvider } from "@/components/theme-provider";
 import { site } from "@/config/site";
+
 import "@/styles/globals.css";
-const sans = localFont({
-  src: "../node_modules/geist/dist/fonts/geist-sans/Geist-Variable.woff2",
-  variable: "--font-sans",
-  display: "swap",
-});
-const mono = localFont({
-  src: "../node_modules/geist/dist/fonts/geist-mono/GeistMono-Variable.woff2",
-  variable: "--font-mono",
-  display: "swap",
-});
+
 export const metadata: Metadata = {
+  metadataBase: new URL(site.url || "http://localhost:3000"),
+
   title: {
     default: "codematt — Code, data & curiosity",
     template: "%s · codematt",
   },
+
   description: site.description,
-  icons: { icon: "/favicon.svg" },
+
+  icons: {
+    icon: "/favicon.svg",
+  },
+
+  openGraph: {
+    type: "website",
+    siteName: "codematt",
+    title: "codematt — Code, data & curiosity",
+    description: site.description,
+    url: site.url || "http://localhost:3000",
+  },
+
+  twitter: {
+    card: "summary_large_image",
+    title: "codematt — Code, data & curiosity",
+    description: site.description,
+  },
 };
+
+export const viewport: Viewport = {
+  width: "device-width",
+  initialScale: 1,
+  colorScheme: "light dark",
+};
+
+type RootLayoutProps = Readonly<{
+  children: React.ReactNode;
+}>;
+
 export default function RootLayout({
   children,
-}: {
-  children: React.ReactNode;
-}) {
+}: RootLayoutProps) {
   return (
     <html
       lang="en"
       suppressHydrationWarning
-      className={`${sans.variable} ${mono.variable}`}
+      className={`${GeistSans.variable} ${GeistMono.variable}`}
     >
       <body>
-        <ThemeProvider>
-          <a href="#main" className="skip-link">
-            Skip to content
-          </a>
-          <Navigation />
-          <main id="main" tabIndex={-1}>
-            {children}
-          </main>
-          <Footer />
-        </ThemeProvider>
+        <ThemeProvider>{children}</ThemeProvider>
       </body>
     </html>
   );

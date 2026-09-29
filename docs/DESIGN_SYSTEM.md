@@ -21,3 +21,7 @@ Satu h1/halaman, landmark semantic, skip link, menu dialog berjudul, current nav
 ## Responsive
 
 Test 360, 390, 768, 1024, 1440, 1920 px. Grid turun dari 2 kolom ke 1, hero display mengecil, nav mobile sebelum ruang desktop sempit, long words boleh wrap. Tidak ada scroll hijacking.
+
+## Phase 2
+
+Hero Indonesia memakai ukuran sedikit lebih kecil untuk panjang kalimat. Header memakai menu mobile sebelum navigasi bertabrakan dengan pilihan bahasa/tema. Kartu besar, kartu standar dan compact menjaga variasi tampilan. Filter menggunakan label terlihat, native select, fokus keyboard yang dipertahankan, serta hasil/empty state yang diumumkan kepada pembaca layar. Gambar judul typographic bukan screenshot produk.

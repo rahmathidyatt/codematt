@@ -1,0 +1,47 @@
+---
+{
+  "title": "Floor Time Scheduler",
+  "slug": "floor-time-scheduler",
+  "summary": "Menyusun jadwal floor time bulanan dengan pembagian giliran dan keluaran yang mudah dibagikan.",
+  "description": "Menyusun jadwal floor time bulanan dengan pembagian giliran dan keluaran yang mudah dibagikan.",
+  "date": "2026-09-29",
+  "year": 2026,
+  "category": "automation",
+  "tags": ["automation", "floor-time-scheduler"],
+  "stack": ["Python", "Streamlit", "Pandas", "Pillow"],
+  "status": "published",
+  "featured": true,
+  "order": 3,
+  "role": "Pengembangan mandiri",
+  "repositoryVisibility": "unlisted",
+}
+---
+
+## Masalah
+
+Menyusun jadwal agen secara manual membutuhkan pemeriksaan berulang: pembagian giliran, hari libur, nama ganda dalam satu hari, dan keterbacaan hasil.
+
+## Solusi
+
+Floor Time Scheduler menyiapkan jadwal satu bulan untuk Senin sampai Sabtu, dengan giliran pagi dan siang. Data agen dapat dimasukkan melalui CSV atau Excel.
+
+## Fokus implementasi
+
+- Menghindari nama yang muncul dua kali pada hari yang sama.
+- Mengecualikan tanggal libur yang ditentukan.
+- Mengatur batas frekuensi mingguan dan membagi giliran secara merata sejauh kapasitas jadwal memungkinkan.
+- Menghasilkan gambar, PDF, dan Excel untuk kebutuhan operasional.
+
+## Keputusan tampilan
+
+Hasil jadwal memprioritaskan teks yang besar, jarak yang cukup, dan nama yang tidak terpotong. Keterbacaan lebih penting daripada dekorasi, terutama ketika jadwal dilihat oleh banyak kelompok usia.
+
+## Tantangan
+
+Pengacakan perlu mengurangi pola hari yang berulang antarminggu. Pembagian yang adil juga harus mempertimbangkan jumlah agen dan slot yang tersedia; keduanya dapat membatasi kombinasi yang mungkin.
+
+## Status dokumentasi
+
+Pemilik melaporkan alur floor time telah berjalan. Case study ini belum melampirkan dataset uji atau laporan distribusi giliran. Data pribadi agen dan jadwal internal tidak dipublikasikan.
+
+> Tanggal di atas adalah tanggal dokumentasi. Ringkasan disusun dari informasi pemilik; aset dan hasil uji produk asli belum dilampirkan.

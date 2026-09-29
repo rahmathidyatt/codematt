@@ -47,7 +47,7 @@ describe("project contract", () => {
   });
   it("checks real content, draft visibility and duplicate slugs", async () => {
     const docs = await readProjects();
-    expect(docs[0].meta.slug).toBe("code-reader");
+    expect(docs.some((p) => p.meta.slug === "code-reader")).toBe(true);
     expect(() => assertUniqueSlugs([...docs, ...docs])).toThrow("Duplicate");
     expect(
       publishedProjects([
@@ -56,7 +56,10 @@ describe("project contract", () => {
     ).toHaveLength(0);
   });
   it("rejects mismatched filenames and malformed MDX", async () => {
-    const source = await readFile("content/projects/code-reader.mdx", "utf8");
+    const source = await readFile(
+      "content/projects/id/code-reader.mdx",
+      "utf8",
+    );
     await expect(parseProject(source, "other.mdx")).rejects.toThrow(
       "filename must match slug",
     );

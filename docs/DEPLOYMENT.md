@@ -7,4 +7,4 @@
 5. Set NEXT_PUBLIC_SITE_URL ke URL HTTPS yang benar. Tambahkan domain milik Anda setelah tersedia. Jangan commit token.
 6. Setiap commit/push menghasilkan deployment melalui integrasi GitHub setelah integrasi dibuat. Akses private repository bergantung pada izin akun/organisasi Vercel–GitHub Anda.
 
-Deployment eksternal belum dilakukan pada paket Phase 1 ini; tidak tersedia identitas repo atau akses Vercel. Situs masih fondasi sebelum publikasi portfolio lengkap.
+Deployment eksternal belum dilakukan pada paket Phase 2 ini; tidak tersedia identitas repo atau akses Vercel. Review kontak, link proyek, screenshot, dan domain sebelum publikasi final.

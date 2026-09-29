@@ -1,0 +1,47 @@
+---
+{
+  "title": "Floor Time Scheduler",
+  "slug": "floor-time-scheduler",
+  "summary": "Creating monthly floor-time schedules with shift allocation and shareable outputs.",
+  "description": "Creating monthly floor-time schedules with shift allocation and shareable outputs.",
+  "date": "2026-09-29",
+  "year": 2026,
+  "category": "automation",
+  "tags": ["automation", "floor-time-scheduler"],
+  "stack": ["Python", "Streamlit", "Pandas", "Pillow"],
+  "status": "published",
+  "featured": true,
+  "order": 3,
+  "role": "Independent development",
+  "repositoryVisibility": "unlisted",
+}
+---
+
+## Problem
+
+Building agent schedules manually requires repeated checks: shift allocation, holidays, duplicate names on a day, and readability.
+
+## Solution
+
+Floor Time Scheduler prepares a month of Monday-to-Saturday morning and afternoon shifts. Agent data can be imported from CSV or Excel.
+
+## Implementation focus
+
+- Avoid assigning a person twice on the same day.
+- Exclude configured holidays.
+- Set weekly frequency limits and distribute shifts as evenly as schedule capacity allows.
+- Produce image, PDF, and Excel outputs for operational use.
+
+## Presentation decisions
+
+The schedule prioritizes larger text, adequate spacing, and names that do not get clipped. Readability matters more than decoration, especially for an audience spanning age groups.
+
+## Challenges
+
+Randomization should reduce repeated weekday patterns across weeks. Fair allocation must also account for the number of agents and available slots, which can constrain possible combinations.
+
+## Documentation status
+
+The owner reported that the floor-time workflow is running. This case study does not yet include a test dataset or allocation-distribution report. Personal agent data and internal schedules are not published.
+
+> The date above is the documentation date. This summary uses owner-provided information; original product assets and test reports are not attached.

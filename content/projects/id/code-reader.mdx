@@ -1,0 +1,42 @@
+---
+{
+  "title": "Code Reader",
+  "slug": "code-reader",
+  "summary": "Pembaca dokumen PDF dan Word dengan suara, untuk mengikuti isi dokumen sesuai ritme Anda.",
+  "description": "Pembaca dokumen PDF dan Word dengan suara, untuk mengikuti isi dokumen sesuai ritme Anda.",
+  "date": "2026-09-29",
+  "year": 2026,
+  "category": "web-apps",
+  "tags": ["web-apps", "code-reader"],
+  "stack": ["JavaScript", "HTML", "CSS", "Web Speech API"],
+  "status": "published",
+  "featured": true,
+  "order": 1,
+  "role": "Pengembangan mandiri",
+  "repositoryVisibility": "unlisted",
+}
+---
+
+## Gambaran proyek
+
+Code Reader berangkat dari kebutuhan membaca dokumen dengan cara yang lebih fleksibel. Pengguna dapat mendengarkan teks tanpa harus terus menatap layar.
+
+## Masalah
+
+Dokumen panjang tidak selalu nyaman dibaca sekaligus. Pengalaman membaca membutuhkan kontrol agar pengguna dapat berhenti, melanjutkan, dan kembali ke bagian yang penting.
+
+## Pendekatan
+
+Antarmuka dirancang untuk menerima PDF dan DOCX, menampilkan teks, serta menyediakan kontrol mulai, jeda, lanjut, dan berhenti. Pemilihan rentang halaman membantu membatasi bagian yang ingin dibaca.
+
+## Keputusan teknis
+
+Aplikasi menggunakan HTML, CSS, dan JavaScript. Pembacaan suara memanfaatkan kemampuan browser atau perangkat. Ketersediaan suara dan bahasa dapat berbeda di setiap perangkat.
+
+Struktur proyek awal ditempatkan dalam folder `dist`, sehingga pengujian lokal dapat dilakukan menggunakan server HTTP sederhana.
+
+## Batasan dan pengembangan
+
+Dokumen hasil pemindaian membutuhkan ekstraksi teks melalui OCR. Dukungan OCR dan konsistensi suara antarbrowser perlu dibuktikan melalui pengujian tersendiri. Dokumentasi ini belum menyertakan hasil uji aksesibilitas atau performa.
+
+> Tanggal di atas adalah tanggal dokumentasi. Ringkasan disusun dari informasi pemilik; aset dan hasil uji produk asli belum dilampirkan.

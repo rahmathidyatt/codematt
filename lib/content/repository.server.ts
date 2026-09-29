@@ -1,10 +1,16 @@
 import "server-only";
 import { cache } from "react";
-import { readProjects, publishedProjects } from "./repository";
-const documents = cache(async () => publishedProjects(await readProjects()));
-export async function getProjects() {
-  return (await documents()).map((project) => project.meta);
+import { readCatalog, selectLocale } from "./repository";
+import type { Locale } from "../i18n";
+const catalog = cache(() => readCatalog());
+export async function getProjects(locale: Locale = "id") {
+  return selectLocale(await catalog(), locale).map((p) => ({
+    ...p.meta,
+    contentLocale: p.contentLocale,
+  }));
 }
-export async function getProject(slug: string) {
-  return (await documents()).find((project) => project.meta.slug === slug);
+export async function getProject(slug: string, locale: Locale = "id") {
+  return selectLocale(await catalog(), locale).find(
+    (p) => p.meta.slug === slug,
+  );
 }

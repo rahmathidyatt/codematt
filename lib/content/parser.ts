@@ -4,6 +4,7 @@ import { projectSchema, type ProjectDocument } from "./schema";
 export async function parseProject(
   source: string,
   filename: string,
+  contentLocale: import("../i18n").Locale = "id",
 ): Promise<ProjectDocument> {
   try {
     const parsed = matter(source);
@@ -17,7 +18,7 @@ export async function parseProject(
     if (filename !== `${result.data.slug}.mdx`)
       throw new Error("filename must match slug");
     await compile(parsed.content);
-    return { meta: result.data, body: parsed.content };
+    return { meta: result.data, body: parsed.content, contentLocale };
   } catch (error) {
     throw new Error(
       `Invalid project ${filename}: ${error instanceof Error ? error.message : String(error)}`,

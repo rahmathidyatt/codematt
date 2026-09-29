@@ -1,6 +1,6 @@
 # Project Guide
 
-Mulai dari template yang cocok dalam content/templates: project-template, web-project, data-science, data-analysis, experiment. Copy ke content/projects/<slug>.mdx. Lihat CONTENT_GUIDE untuk aturan tepat.
+Mulai dari template yang cocok dalam content/templates: project-template, web-project, data-science, data-analysis, experiment. Copy ke content/projects/id/<slug>.mdx. Lihat CONTENT_GUIDE untuk aturan tepat.
 
 ## Kejujuran case study
 
@@ -11,4 +11,4 @@ Eksperimen: pertanyaan, percobaan, observasi, next step. Status prototype/draft 
 
 ## Initial backlog
 
-Brighton HUB Internal Operations Dashboard; Floor Time Scheduler; Code Reader; AI Tools Sentiment Analysis; Lazada Review Sentiment Analysis; CodeIgniter Legacy Modernization; Data Lab. Hanya Code Reader tersedia sebagai contoh fondasi. Informasi internal, nama agent, dokumen perusahaan dan kontak tidak disertakan.
+Brighton HUB Internal Operations Dashboard; Floor Time Scheduler; Code Reader; AI Tools Sentiment Analysis; Lazada Review Sentiment Analysis; CodeIgniter Legacy Modernization; Data Lab. Ketujuh proyek tersedia sebagai ringkasan bilingual pada Phase 2; sumber fakta dari informasi pemilik dan batas verifikasi dinyatakan pada isi. Informasi internal, nama agent, dokumen perusahaan dan kontak tidak disertakan.

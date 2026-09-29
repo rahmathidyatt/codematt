@@ -1,3 +1,5 @@
+> **Status terbaru: Phase 2 selesai.** Bagian scope Phase 0–1 di bawah adalah catatan fondasi awal. Implementasi sekarang mencakup Home lengkap, Work explorer, detail proyek, About, serta Indonesia/English. Lihat PHASE_2_REPORT.md dan PHASE_2_DECISIONS.md. Phase 3–5 tetap pekerjaan berikutnya.
+
 # codematt — Master Blueprint
 
 ## Tujuan

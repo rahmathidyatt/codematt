@@ -83,4 +83,11 @@ export const projectSchema = z
         });
   });
 export type ProjectMeta = z.infer<typeof projectSchema>;
-export type ProjectDocument = { meta: ProjectMeta; body: string };
+export type LocalizedProjectMeta = ProjectMeta & {
+  contentLocale: import("../i18n").Locale;
+};
+export type ProjectDocument = {
+  meta: ProjectMeta;
+  body: string;
+  contentLocale: import("../i18n").Locale;
+};

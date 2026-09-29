@@ -2,7 +2,7 @@
 
 ## Langkah tepat
 
-Duplikasi `content/templates/project-template.mdx` → `content/projects/my-project.mdx`. Ubah slug ke `my-project`. Lengkapi field wajib, isi body, ubah status draft setelah siap. Jalankan `pnpm test && pnpm build`. Commit dan push ke repo yang terhubung Vercel.
+Duplikasi `content/templates/project-template.mdx` → `content/projects/id/my-project.mdx`. Ubah slug ke `my-project`. Lengkapi field wajib, isi body, ubah status draft setelah siap. Jalankan `pnpm test && pnpm build`. Commit dan push ke repo yang terhubung Vercel.
 
 ## Schema proyek
 
@@ -23,7 +23,7 @@ Duplikasi `content/templates/project-template.mdx` → `content/projects/my-proj
 | cover                           | Tidak | Object src, alt, width, height                                     |
 | gallery                         | Tidak | Array object gambar; default []; rendering gallery Phase 3         |
 | github, demo, notebook, article | Tidak | URL HTTP(S) lengkap, hilangkan jika belum ada                      |
-| role, duration                  | Tidak | Teks faktual; duration belum ditampilkan pada Phase 1              |
+| role, duration                  | Tidak | Teks faktual; duration duration masih disimpan sebagai metadata    |
 | repositoryVisibility            | Tidak | public, private, unlisted; default unlisted                        |
 
 Kategori: `web-apps`, `data-science`, `data-analysis`, `machine-learning`, `automation`, `legacy-modernization`, `experiments`.
@@ -53,7 +53,7 @@ Contoh cover di atas hanya schema; buat asetnya sebelum menambahkan field cover.
 
 ## Status dan urutan
 
-Draft selalu disembunyikan, tetapi tetap divalidasi agar kesalahan tidak tersimpan diam-diam. Published berarti case study ditampilkan; bukan sertifikat produk lulus QA. In-progress/prototype/archived tetap boleh ditampilkan dengan label status. Urutan: order ascending, date descending, slug alfabetis. Home memakai dua featured teratas.
+Draft selalu disembunyikan, tetapi tetap divalidasi agar kesalahan tidak tersimpan diam-diam. Published berarti case study ditampilkan; bukan sertifikat produk lulus QA. In-progress/prototype/archived tetap boleh ditampilkan dengan label status. Urutan: order ascending, date descending, slug alfabetis. Home memakai tiga featured teratas. Work default memakai date descending lalu order; mode Featured memakai featured dahulu, lalu order. Mode Year memakai tahun descending lalu judul.
 
 ## Kesalahan umum
 
@@ -62,3 +62,23 @@ Tanggal YAML tanpa tanda kutip, year tidak cocok date, slug berisi spasi, filena
 ## Note (direncanakan Phase 4)
 
 Template note mencadangkan title/slug/summary/date/tags/status. Engine Notes dan validasi schema note belum tersedia dalam fondasi ini. Simpan sebagai draft sampai tahap tersebut.
+
+## Dua bahasa (Phase 2)
+
+- `id/<slug>.mdx` wajib menjadi sumber utama; `en/<slug>.mdx` opsional.
+- Nama file dan slug sama di kedua folder. Jangan memasukkan `locale` atau `contentLocale` ke frontmatter; repository menentukannya dari folder.
+- Terjemahkan title (jika bukan nama produk), summary, description, role, duration, body, alt gambar dan tags jika perlu.
+- Field berikut harus identik dan diperiksa otomatis: date, year, category, stack, status, featured, order, repositoryVisibility, github, demo, notebook, article.
+- Cover/gallery boleh berbeda untuk screenshot produk berbahasa berbeda; semua aset tetap berada dalam folder slug yang sama.
+- English tanpa sumber ID akan menggagalkan validasi. Perbedaan metadata nonbahasa akan menyebut nama proyek dan field.
+- Jika English belum ada, `/en/work/<slug>` memakai konten Indonesia; penanda fallback ditampilkan dan atribut lang pada teks tetap id.
+- Perubahan status draft harus sama di kedua bahasa. Draft tetap divalidasi tetapi tidak tampil.
+
+## Alur cepat
+
+Tulis ID → terjemahkan EN bila siap → `pnpm test` → `pnpm build` → commit → push. Komponen halaman dan test tidak perlu diedit hanya untuk menambah proyek. Metadata tanggal adalah tanggal dokumentasi/publikasi case study; jangan mengubahnya menjadi tanggal peluncuran produk tanpa bukti.
+
+## Filter
+
+`/id/work?q=sentimen&category=data-science&stack=Python&year=2026&sort=featured`
+Nilai kategori dan teknologi tetap konsisten lintas bahasa; label antarmuka diterjemahkan. Kata kunci mencari judul, ringkasan, tag, dan stack dalam bahasa yang ditampilkan. Kata kunci tidak diterjemahkan otomatis ketika berpindah bahasa.
