@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { ProjectGallery } from "@/components/project-gallery";
 import Image from "next/image";
 import { notFound } from "next/navigation";
 import { evaluate } from "@mdx-js/mdx";
@@ -115,6 +116,11 @@ export default async function ProjectPage({ params }: { params: Params }) {
           <p className="muted">{categoryLabels[locale][meta.category]}</p>
         </aside>
       </div>
+      <ProjectGallery
+        images={meta.gallery}
+        locale={locale}
+        contentLocale={contentLocale}
+      />
       <div className="project-links">
         {[
           [t.demo, meta.demo],

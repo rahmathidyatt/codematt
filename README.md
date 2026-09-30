@@ -1,6 +1,6 @@
 # codematt — Personal Portfolio & Digital Lab
 
-Fondasi portfolio Rahmat Hidayat untuk aplikasi web, data, ML dan eksperimen. **Paket ini melanjutkan hingga Phase 2**, bukan seluruh roadmap. UI tersedia dalam bahasa Indonesia dan Inggris; panduan berbahasa Indonesia.
+Fondasi portfolio Rahmat Hidayat untuk aplikasi web, data, ML dan eksperimen. **Paket ini melanjutkan hingga Phase 3**, bukan seluruh roadmap. UI tersedia dalam bahasa Indonesia dan Inggris; panduan berbahasa Indonesia.
 
 ## Mulai di VS Code (Windows)
 
@@ -22,7 +22,7 @@ Untuk menjalankan lagi pada hari berikutnya cukup buka folder yang sama dan `pnp
 
 ## Stack
 
-Next.js App Router + React, strict TypeScript, Tailwind CSS 4, Base UI primitive dengan pola komponen milik proyek seperti shadcn, MDX, Zod, next-themes, Geist lokal. Tidak ada database atau CMS. Detail versi dan keputusan kompatibilitas: [DEPENDENCIES](docs/DEPENDENCIES.md). Motion ditunda sampai interaksi Phase 3; tidak dipasang tanpa penggunaan.
+Next.js App Router + React, strict TypeScript, Tailwind CSS 4, Base UI primitive dengan pola komponen milik proyek seperti shadcn, MDX, Zod, next-themes, Geist lokal. Tidak ada database atau CMS. Detail versi dan keputusan kompatibilitas: [DEPENDENCIES](docs/DEPENDENCIES.md). Motion digunakan secara terbatas untuk pergantian panel Lab dengan dukungan reduced motion.
 
 ## Pemeriksaan dan production
 
@@ -49,7 +49,7 @@ pnpm start
 - About dengan pendekatan, alat kerja, dan jejak dokumentasi proyek.
 - Lab menampilkan proyek yang sedang dikerjakan. Navigasi, tema, footer, error, 404, judul, deskripsi dan alternate-language metadata diterjemahkan.
 
-Command palette, interaksi Lab lanjutan dan gallery masuk Phase 3; Notes engine, OG dinamis, sitemap, structured data lengkap dan analytics masuk Phase 4. Kontak publik belum diberikan; tidak ada alamat atau akun sosial yang dikarang.
+Command palette, Lab interaktif dan komponen galeri tersedia pada Phase 3; Notes engine, OG dinamis, sitemap, structured data lengkap dan analytics masuk Phase 4. Kontak publik belum diberikan; tidak ada alamat atau akun sosial yang dikarang.
 
 ## Struktur
 
@@ -78,7 +78,7 @@ docs/                Blueprint dan panduan
 6. Simpan gambar asli di `public/projects/nama-proyek/`.
 7. Jalankan validasi, commit dan push. Home, Work, filter teknologi/tahun dan route diperbarui otomatis.
 
-English yang belum tersedia menggunakan konten Indonesia dengan penanda bahasa yang jelas. Tidak memerlukan API penerjemah atau biaya langganan. Sitemap dan command search menyusul Phase 3–4.
+English yang belum tersedia menggunakan konten Indonesia dengan penanda bahasa yang jelas. Tidak memerlukan API penerjemah atau biaya langganan. Command search tersedia pada Phase 3; sitemap menyusul Phase 4.
 
 ## Tambah note
 
@@ -114,3 +114,7 @@ Ikuti [UPDATE_PHASE_2](docs/UPDATE_PHASE_2.md). Gunakan folder hasil ekstrak bar
 ## Langkah berikutnya
 
 **Phase 3 — Experience:** command palette Cmd/Ctrl+K untuk proyek/navigasi, interaksi khas yang ringan, gallery dengan screenshot asli, dan penyempurnaan Lab. Sistem bahasa tetap dipakai pada setiap fitur baru.
+
+## Update terbaru — Phase 3
+
+Panduan menjalankan dan memperbarui: [UPDATE_PHASE_3](docs/UPDATE_PHASE_3.md). Laporan implementasi dan pengujian: [PHASE_3_REPORT](docs/PHASE_3_REPORT.md). Screenshot asli untuk galeri: [GALLERY_GUIDE](docs/GALLERY_GUIDE.md).

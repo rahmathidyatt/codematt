@@ -1,5 +1,5 @@
 import { FoundationPage } from "@/components/foundation-page";
-import { ProjectGrid } from "@/components/project-card";
+import { LabWorkspace } from "@/components/lab-workspace";
 import { getLocale } from "@/lib/locale.server";
 import { getProjects } from "@/lib/content/repository.server";
 import { pageMetadata } from "@/lib/metadata";
@@ -42,7 +42,7 @@ export default async function Lab({
       </div>
       <div className="section">
         {projects.length ? (
-          <ProjectGrid projects={projects} locale={locale} />
+          <LabWorkspace projects={projects} locale={locale} />
         ) : (
           <p>{t.noLab}</p>
         )}

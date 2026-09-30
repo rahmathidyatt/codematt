@@ -9,3 +9,7 @@ Playwright mencakup default Indonesia, preferensi kembali ke root, pergantian ba
 Browser default diinstall sekali dengan `pnpm exec playwright install chromium`. Override opsional `PLAYWRIGHT_CHROMIUM_EXECUTABLE_PATH` dapat menunjuk executable Chromium di CI. Tidak ada path mesin khusus dalam source. QA pengerjaan menggunakan Chromium 141 alternatif karena unduhan default CDN bermasalah. Screenshot terdapat di docs/previews/phase2-*.
 
 Tuntutan Lighthouse >=95, Safari/Firefox, audit screen reader manual serta fitur Phase 3–4 belum dinyatakan lulus pada tahap ini. Hasil aktual dicatat di PHASE_2_REPORT.md.
+
+## Phase 3
+
+`pnpm test:e2e` kini mencakup command palette dan Lab dalam dua bahasa, keyboard shortcuts, pengembalian fokus, touch target/pemilihan di viewport mobile dan reduced motion. `pnpm test:gallery` membuat route fixture sementara pada build `.next-gallery`, menjalankan Playwright di port 3001, lalu membersihkan route/build dan memulihkan konfigurasi TypeScript. Jalankan tanpa proses build lain secara bersamaan. Route fixture tidak termasuk situs produksi.

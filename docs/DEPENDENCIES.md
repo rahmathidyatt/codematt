@@ -51,3 +51,7 @@ Latest ESLint 10 and TypeScript 7 are incompatible with peer ranges of the curre
 }
 
 ESLint 9.39.5 emits an upstream deprecation warning. It is retained only as development tooling because the current Next lint plugins do not accept ESLint 10; upgrade once their peer ranges support it. This is a known tooling limitation, not a silent claim of full latest-version support.
+
+## Pembaruan Phase 3
+
+Motion `13.4.6` ditambahkan dan dikunci dalam `pnpm-lock.yaml` untuk transisi panel Lab. Peer dependency React `^18.0.0 || ^19.0.0` sesuai dengan React proyek. Implementasi menggunakan `LazyMotion`, `domAnimation` dan `useReducedMotion`; referensi resmi: https://motion.dev/docs/react-accessibility. Tidak ada upgrade massal dependency lain pada Phase 3.
