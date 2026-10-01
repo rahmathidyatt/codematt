@@ -1,3 +1,6 @@
+import { JsonLd } from "@/components/json-ld";
+import { siteOrigin } from "@/lib/site-url";
+import { site } from "@/config/site";
 import Link from "next/link";
 import { ProjectGallery } from "@/components/project-gallery";
 import Image from "next/image";
@@ -47,6 +50,17 @@ export default async function ProjectPage({ params }: { params: Params }) {
     .slice(0, 2);
   return (
     <article className="container page case-study">
+      <JsonLd
+        data={{
+          "@context": "https://schema.org",
+          "@type": "CreativeWork",
+          name: meta.title,
+          description: meta.summary,
+          inLanguage: contentLocale,
+          url: siteOrigin() + localizedPath(locale, `/work/${meta.slug}`),
+          author: { "@type": "Person", name: site.owner },
+        }}
+      />
       <Link className="text-link" href={localizedPath(locale, "/work")}>
         {t.backWork}
       </Link>

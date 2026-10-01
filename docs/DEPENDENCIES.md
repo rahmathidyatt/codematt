@@ -55,3 +55,7 @@ ESLint 9.39.5 emits an upstream deprecation warning. It is retained only as deve
 ## Pembaruan Phase 3
 
 Motion `13.4.6` ditambahkan dan dikunci dalam `pnpm-lock.yaml` untuk transisi panel Lab. Peer dependency React `^18.0.0 || ^19.0.0` sesuai dengan React proyek. Implementasi menggunakan `LazyMotion`, `domAnimation` dan `useReducedMotion`; referensi resmi: https://motion.dev/docs/react-accessibility. Tidak ada upgrade massal dependency lain pada Phase 3.
+
+## Pembaruan Phase 4
+
+`@vercel/analytics` 2.0.1 ditambahkan dan dikunci. Peer Next >=13 dan React 18/19 sesuai proyek. SDK hanya dirender bila fitur diaktifkan dan pengunjung mengizinkan. Notes/TOC/SEO menggunakan dependency MDX, Zod dan API Next yang sudah ada. Tidak ada upgrade massal dependency.

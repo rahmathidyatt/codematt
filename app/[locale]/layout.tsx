@@ -1,3 +1,7 @@
+import { getNotes } from "@/lib/content/notes.server";
+import { siteOrigin, canIndex } from "@/lib/site-url";
+import { JsonLd } from "@/components/json-ld";
+import { site } from "@/config/site";
 import type { Metadata } from "next";
 import localFont from "next/font/local";
 import { Navigation } from "@/components/navigation";
@@ -29,12 +33,8 @@ export async function generateMetadata({
 }): Promise<Metadata> {
   const locale = await getLocale(params);
   return {
-    metadataBase: new URL(
-      process.env.NEXT_PUBLIC_SITE_URL ||
-        (process.env.VERCEL_URL
-          ? `https://${process.env.VERCEL_URL}`
-          : "http://localhost:3000"),
-    ),
+    metadataBase: new URL(siteOrigin()),
+    robots: { index: canIndex(), follow: canIndex() },
     title: { default: "codematt", template: "%s · codematt" },
     description: dictionaries[locale].intro,
     icons: { icon: "/favicon.svg" },
@@ -56,12 +56,39 @@ export default async function RootLayout({
     >
       <body>
         <ThemeProvider>
+          <JsonLd
+            data={{
+              "@context": "https://schema.org",
+              "@graph": [
+                {
+                  "@type": "WebSite",
+                  "@id": `${siteOrigin()}/#website`,
+                  url: siteOrigin(),
+                  name: site.name,
+                  inLanguage: ["id", "en"],
+                },
+                {
+                  "@type": "Person",
+                  "@id": `${siteOrigin()}/#person`,
+                  name: site.owner,
+                  url: siteOrigin(),
+                  ...(site.github || site.linkedin
+                    ? { sameAs: [site.github, site.linkedin].filter(Boolean) }
+                    : {}),
+                },
+              ],
+            }}
+          />
           <a className="skip-link" href="#main">
             {dictionaries[locale].skip}
           </a>
           <Navigation
             locale={locale}
-            entries={buildSearchIndex(await getProjects(locale), locale)}
+            entries={buildSearchIndex(
+              await getProjects(locale),
+              locale,
+              await getNotes(locale),
+            )}
           />
           <main id="main" tabIndex={-1}>
             {children}

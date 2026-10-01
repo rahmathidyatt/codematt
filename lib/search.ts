@@ -2,16 +2,18 @@ import { navigation } from "@/config/site";
 import { dictionaries, categoryLabels } from "@/config/messages";
 import { localizedPath, type Locale } from "@/lib/i18n";
 import type { LocalizedProjectMeta } from "@/lib/content/schema";
+import type { NoteSummary } from "./content/note-schema";
 export type SearchEntry = {
   title: string;
   href: string;
   keywords: string;
-  kind: "pages" | "projects";
+  kind: "pages" | "projects" | "notes";
   lang: Locale;
 };
 export function buildSearchIndex(
   projects: LocalizedProjectMeta[],
   locale: Locale,
+  notes: NoteSummary[] = [],
 ): SearchEntry[] {
   const t = dictionaries[locale];
   return [
@@ -26,6 +28,15 @@ export function buildSearchIndex(
       kind: "pages" as const,
       lang: locale,
     })),
+    ...notes
+      .filter((n) => n.status === "published")
+      .map((n) => ({
+        title: n.title,
+        href: localizedPath(locale, `/notes/${n.slug}`),
+        keywords: [n.summary, ...n.tags].join(" "),
+        kind: "notes" as const,
+        lang: n.contentLocale,
+      })),
     ...projects
       .filter((p) => p.status !== "draft")
       .map((p) => ({

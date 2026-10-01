@@ -1,6 +1,6 @@
 # codematt — Personal Portfolio & Digital Lab
 
-Fondasi portfolio Rahmat Hidayat untuk aplikasi web, data, ML dan eksperimen. **Paket ini melanjutkan hingga Phase 3**, bukan seluruh roadmap. UI tersedia dalam bahasa Indonesia dan Inggris; panduan berbahasa Indonesia.
+Fondasi portfolio Rahmat Hidayat untuk aplikasi web, data, ML dan eksperimen. **Paket ini melanjutkan hingga Phase 4**, bukan seluruh roadmap. UI tersedia dalam bahasa Indonesia dan Inggris; panduan berbahasa Indonesia.
 
 ## Mulai di VS Code (Windows)
 
@@ -49,7 +49,7 @@ pnpm start
 - About dengan pendekatan, alat kerja, dan jejak dokumentasi proyek.
 - Lab menampilkan proyek yang sedang dikerjakan. Navigasi, tema, footer, error, 404, judul, deskripsi dan alternate-language metadata diterjemahkan.
 
-Command palette, Lab interaktif dan komponen galeri tersedia pada Phase 3; Notes engine, OG dinamis, sitemap, structured data lengkap dan analytics masuk Phase 4. Kontak publik belum diberikan; tidak ada alamat atau akun sosial yang dikarang.
+Command palette, Lab interaktif dan komponen galeri tersedia pada Phase 3; Notes engine, OG dinamis, sitemap, structured data dan analytics opt-in kini tersedia pada Phase 4. Kontak publik belum diberikan; tidak ada alamat atau akun sosial yang dikarang.
 
 ## Struktur
 
@@ -78,11 +78,11 @@ docs/                Blueprint dan panduan
 6. Simpan gambar asli di `public/projects/nama-proyek/`.
 7. Jalankan validasi, commit dan push. Home, Work, filter teknologi/tahun dan route diperbarui otomatis.
 
-English yang belum tersedia menggunakan konten Indonesia dengan penanda bahasa yang jelas. Tidak memerlukan API penerjemah atau biaya langganan. Command search tersedia pada Phase 3; sitemap menyusul Phase 4.
+English yang belum tersedia menggunakan konten Indonesia dengan penanda bahasa yang jelas. Tidak memerlukan API penerjemah atau biaya langganan. Command search tersedia pada Phase 3; sitemap tersedia pada Phase 4.
 
 ## Tambah note
 
-Engine Notes belum aktif pada Phase 2. Draft dapat disiapkan memakai `content/templates/note-template.mdx` dan disimpan di `content/notes/`. File ini **belum dirender atau diindeks** hingga Phase 4. Jangan berharap Notes terbit otomatis sebelum engine tersebut selesai.
+Engine Notes aktif. Simpan artikel di `content/notes/id/` dan terjemahannya di `content/notes/en/`. Status draft tidak ditampilkan ke publik. Panduan lengkap: [NOTES_GUIDE](docs/NOTES_GUIDE.md).
 
 ## Gambar
 
@@ -113,8 +113,12 @@ Ikuti [UPDATE_PHASE_2](docs/UPDATE_PHASE_2.md). Gunakan folder hasil ekstrak bar
 
 ## Langkah berikutnya
 
-**Phase 3 — Experience:** command palette Cmd/Ctrl+K untuk proyek/navigasi, interaksi khas yang ringan, gallery dengan screenshot asli, dan penyempurnaan Lab. Sistem bahasa tetap dipakai pada setiap fitur baru.
+**Phase 5 — Audit final:** review/revisi pemilik, aksesibilitas, browser, responsive, Lighthouse, dan persiapan publikasi.
 
 ## Update terbaru — Phase 3
 
 Panduan menjalankan dan memperbarui: [UPDATE_PHASE_3](docs/UPDATE_PHASE_3.md). Laporan implementasi dan pengujian: [PHASE_3_REPORT](docs/PHASE_3_REPORT.md). Screenshot asli untuk galeri: [GALLERY_GUIDE](docs/GALLERY_GUIDE.md).
+
+## Update terbaru — Phase 4
+
+Mulai dari [UPDATE_PHASE_4](docs/UPDATE_PHASE_4.md). Notes bilingual, daftar isi, waktu/progres baca, pencarian artikel, metadata/OG/sitemap/JSON-LD dan analytics opsional telah ditambahkan. Analytics nonaktif secara bawaan. Domain publik perlu dikonfigurasi sebelum pengindeksan. Lihat [SEO_ANALYTICS](docs/SEO_ANALYTICS.md).

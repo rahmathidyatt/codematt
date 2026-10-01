@@ -1,0 +1,46 @@
+---
+title: Mengelola konten Indonesia dan Inggris
+slug: mengelola-konten-dua-bahasa
+summary: Alur menulis satu catatan, menambahkan terjemahan, dan menjaga tautan tetap konsisten di codematt.
+date: "2026-09-30"
+tags: [Dokumentasi, Website]
+status: published
+---
+
+## Tulis versi Indonesia terlebih dahulu
+
+Konten Indonesia menjadi sumber utama dalam portofolio ini. Simpan artikel pada `content/notes/id/`. Mulailah dari masalah atau gagasan yang ingin dibagikan, kemudian susun penjelasan dengan judul bagian yang membantu pembaca menemukan informasi.
+
+Gunakan ringkasan yang berdiri sendiri. Ringkasan ditampilkan pada daftar Notes, pencarian cepat, dan metadata halaman. Hindari kalimat seperti “penjelasan ada di bawah” karena kalimat tersebut tidak menjelaskan topik ketika tampil di hasil pencarian.
+
+## Pertahankan identitas artikel
+
+Setiap artikel mempunyai slug yang digunakan sebagai bagian dari alamat halaman. Nama file harus sama dengan slug. Contohnya, slug `catatan-pertama` disimpan sebagai `catatan-pertama.mdx`.
+
+Judul boleh diterjemahkan, tetapi slug tetap sama agar tombol pilihan bahasa mengarah ke artikel yang sesuai. Tanggal, tanggal pembaruan jika ada, dan status publikasi juga harus sama pada kedua versi.
+
+## Tambahkan terjemahan yang alami
+
+Simpan versi Inggris pada `content/notes/en/` dengan nama file yang sama. Terjemahkan judul, ringkasan, topik, dan isi. Nama teknologi, potongan kode, serta alamat file biasanya tetap dipertahankan.
+
+Periksa arti kalimat, bukan hanya padanan setiap kata. Kalimat Indonesia yang panjang dapat dipecah menjadi beberapa kalimat dalam versi Inggris jika itu membuat penjelasan lebih jelas.
+
+### Ketika terjemahan belum tersedia
+
+Artikel Indonesia yang sudah diterbitkan tetap dapat dibaca melalui pilihan bahasa Inggris. Halaman akan menampilkan penanda bahwa isinya masih dalam bahasa Indonesia. Terjemahan tidak dibuat otomatis oleh layanan eksternal.
+
+Cara ini memungkinkan penulis menerbitkan tulisan yang sudah siap tanpa menampilkan terjemahan yang belum ditinjau. Tambahkan versi Inggris ketika isinya sudah diperiksa.
+
+## Periksa draf dan publikasi
+
+Gunakan status `draft` selama menulis. Draf tidak masuk daftar Notes, pencarian cepat, sitemap, atau halaman artikel publik. Ubah status menjadi `published` pada versi Indonesia dan terjemahannya saat siap diterbitkan.
+
+Jalankan `pnpm verify` untuk memeriksa metadata, tipe, aturan kode, dan build. Jika ada kesalahan nama file atau perbedaan status antarterjemahan, perbaiki pesan validasi sebelum melakukan publikasi.
+
+## Tinjau pengalaman membaca
+
+Judul tingkat dua dan tiga menjadi daftar isi secara otomatis. Gunakan tingkat judul sesuai susunannya dan jangan membuat judul utama baru di badan artikel karena judul halaman sudah disediakan.
+
+Waktu baca adalah perkiraan berdasarkan panjang teks, bukan pengukuran terhadap pembaca. Progres membaca mengikuti posisi gulir pada badan artikel. Keduanya membantu orientasi pembaca, tetapi tidak menggantikan susunan tulisan yang jelas.
+
+Setelah artikel siap, lihat kedua bahasa di desktop dan ponsel. Periksa apakah tautan daftar isi menuju bagian yang tepat dan apakah artikel sebelumnya atau berikutnya dapat dibuka.

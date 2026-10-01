@@ -19,7 +19,11 @@ try {
 }
 const tsconfig = await readFile("tsconfig.json");
 const nextenv = await readFile("next-env.d.ts");
-const env = { ...process.env, CODEMATT_GALLERY_TEST: "1" };
+const env = {
+  ...process.env,
+  CODEMATT_GALLERY_TEST: "1",
+  NEXT_PUBLIC_ENABLE_ANALYTICS: "true",
+};
 function run(args) {
   const result = spawnSync(process.execPath, args, { env, stdio: "inherit" });
   if (result.status !== 0) throw new Error(`Command failed: ${args.join(" ")}`);

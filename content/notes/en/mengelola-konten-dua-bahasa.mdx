@@ -1,0 +1,46 @@
+---
+title: Managing Indonesian and English content
+slug: mengelola-konten-dua-bahasa
+summary: Write a note, add a translation, and keep article links consistent in codematt.
+date: "2026-09-30"
+tags: [Documentation, Website]
+status: published
+---
+
+## Write the Indonesian version first
+
+Indonesian content is the primary source in this portfolio. Store an article in `content/notes/id/`. Start with the problem or idea you want to share, then use section headings to help readers find information.
+
+Write a summary that makes sense on its own. It appears in the Notes listing, quick search, and page metadata. Avoid phrases such as “see below” because they do not describe the topic when shown in search results.
+
+## Keep the article identity consistent
+
+Each article has a slug used in its page address. The filename must match the slug. For example, the slug `first-note` belongs in `first-note.mdx`.
+
+Translate the title while keeping the slug unchanged so the language switch leads to the matching article. Publication date, optional update date, and publication status must also match between both versions.
+
+## Add a natural translation
+
+Store the English version in `content/notes/en/` using the same filename. Translate the title, summary, topics, and body. Technology names, code fragments, and file paths can usually remain unchanged.
+
+Check the meaning of sentences rather than translating every word separately. Split a long Indonesian sentence into shorter English sentences when this improves clarity.
+
+### When a translation is not available
+
+A published Indonesian article remains readable when English is selected. The page displays a notice explaining that its content is still in Indonesian. No external translation service automatically rewrites the article.
+
+This allows writers to publish ready content without presenting an unchecked translation. Add the English version after reviewing its meaning and wording.
+
+## Check drafts and publication
+
+Use `draft` while writing. Drafts are excluded from the Notes listing, quick search, sitemap, and public article routes. Change the status to `published` in the Indonesian version and its translation when both are ready.
+
+Run `pnpm verify` to check metadata, types, code rules, and the production build. Resolve filename errors or publication-status mismatches before publishing.
+
+## Review the reading experience
+
+Level-two and level-three headings automatically form the table of contents. Use heading levels in order, and avoid adding another top-level heading in the article body because the page already supplies its title.
+
+Reading time estimates text length rather than measuring a person's reading speed. Reading progress follows the scroll position within the article body. Both help with orientation but cannot replace clear writing.
+
+Once the article is ready, inspect both languages on desktop and mobile. Check that contents links reach the intended sections and that previous and next article links open correctly.

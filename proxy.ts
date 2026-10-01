@@ -10,5 +10,7 @@ export function proxy(request: NextRequest) {
   return NextResponse.redirect(url);
 }
 export const config = {
-  matcher: ["/((?!_next/|projects/|favicon.svg|robots.txt|sitemap.xml).*)"],
+  matcher: [
+    "/((?!_next/|_vercel/|og(?:/|$)|projects/|favicon.svg|robots.txt|sitemap.xml).*)",
+  ],
 };

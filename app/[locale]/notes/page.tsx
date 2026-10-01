@@ -1,19 +1,17 @@
 import { FoundationPage } from "@/components/foundation-page";
+import { NotesExplorer } from "@/components/notes-explorer";
+import { getNotes } from "@/lib/content/notes.server";
 import { getLocale } from "@/lib/locale.server";
 import { pageMetadata } from "@/lib/metadata";
-import { dictionaries } from "@/config/messages";
+import { notesMessages } from "@/config/notes-messages";
 export async function generateMetadata({
   params,
 }: {
   params: Promise<{ locale: string }>;
 }) {
-  const l = await getLocale(params);
-  return pageMetadata(
-    l,
-    dictionaries[l].notes,
-    dictionaries[l].notesLead,
-    "/notes",
-  );
+  const locale = await getLocale(params);
+  const t = notesMessages[locale];
+  return pageMetadata(locale, "Notes", t.lead, "/notes");
 }
 export default async function Notes({
   params,
@@ -21,17 +19,15 @@ export default async function Notes({
   params: Promise<{ locale: string }>;
 }) {
   const locale = await getLocale(params);
-  const t = dictionaries[locale];
+  const t = notesMessages[locale];
   return (
     <FoundationPage
       locale={locale}
-      eyebrow={t.notesLabel}
-      title={t.notesPageTitle}
-      description={t.notesLead}
+      eyebrow="NOTES"
+      title={t.title}
+      description={t.lead}
     >
-      <div className="empty-state">
-        <p>{t.notesEmpty}</p>
-      </div>
+      <NotesExplorer locale={locale} notes={await getNotes(locale)} />
     </FoundationPage>
   );
 }

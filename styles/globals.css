@@ -1450,3 +1450,167 @@ html[lang="id"] .hero h1 {
     font-size: 22px;
   }
 }
+
+/* Phase 4 — reading and publishing */
+.notes-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 24px;
+  margin: 28px 0;
+}
+.note-card {
+  border-top: 1px solid var(--line);
+  padding: 28px 0;
+  min-width: 0;
+}
+.note-card h2 {
+  font-size: clamp(24px, 3vw, 32px);
+  line-height: 1.2;
+}
+.note-card > p:not(.eyebrow) {
+  color: var(--muted);
+}
+.note-card .text-link {
+  display: inline-block;
+  margin-top: 16px;
+}
+.note-filters {
+  display: flex;
+  align-items: end;
+  flex-wrap: wrap;
+  gap: 16px;
+  margin-top: 40px;
+}
+.note-filters label {
+  display: grid;
+  gap: 8px;
+  flex: 1;
+  min-width: 180px;
+}
+.note-filters input,
+.note-filters select {
+  width: 100%;
+  min-height: 46px;
+  padding: 10px;
+  border: 1px solid var(--line);
+  background: var(--surface);
+  color: var(--fg);
+  border-radius: 6px;
+  font: inherit;
+}
+.note-layout {
+  display: grid;
+  grid-template-columns: 260px minmax(0, 760px);
+  gap: 64px;
+  margin: 56px 0;
+  align-items: start;
+}
+.note-toc {
+  position: sticky;
+  top: 110px;
+  font-size: 14px;
+}
+.note-toc h2 {
+  font-size: 16px;
+}
+.note-toc ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  border-left: 1px solid var(--line);
+}
+.note-toc li {
+  padding: 8px 16px;
+}
+.note-toc li[data-depth="3"] {
+  padding-left: 30px;
+}
+.note-toc a:hover {
+  color: var(--accent);
+  text-decoration: underline;
+}
+.note-content :is(h2, h3) {
+  scroll-margin-top: 120px;
+}
+.note-content pre {
+  overflow-x: auto;
+  max-width: 100%;
+  padding: 20px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: var(--surface);
+}
+.note-content code {
+  overflow-wrap: anywhere;
+}
+.note-content pre code {
+  overflow-wrap: normal;
+}
+.note-content a {
+  text-decoration: underline;
+  color: var(--accent);
+}
+.note-content h2 {
+  margin-top: 48px;
+}
+.note-content h2:first-child {
+  margin-top: 0;
+}
+.reading-progress {
+  position: fixed;
+  inset: 0 0 auto;
+  z-index: 80;
+  height: 3px;
+  pointer-events: none;
+}
+.reading-progress span {
+  display: block;
+  height: 100%;
+  background: var(--accent);
+  transform-origin: left;
+}
+.note-pagination {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 32px;
+  padding-top: 32px;
+  border-top: 1px solid var(--line);
+}
+.note-pagination a {
+  display: grid;
+  gap: 8px;
+}
+.note-pagination small {
+  color: var(--muted);
+}
+.note-pagination a:last-child {
+  text-align: right;
+}
+.analytics-consent {
+  flex-basis: 100%;
+  max-width: 520px;
+  font-size: 13px;
+  color: var(--muted);
+}
+.site-footer {
+  flex-wrap: wrap;
+}
+@media (max-width: 800px) {
+  .note-layout {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+  .note-toc {
+    position: static;
+  }
+  .notes-grid {
+    grid-template-columns: 1fr;
+    gap: 0;
+  }
+  .note-pagination {
+    gap: 16px;
+  }
+  .note-page .page-title {
+    overflow-wrap: anywhere;
+  }
+}

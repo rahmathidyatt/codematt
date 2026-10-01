@@ -1,3 +1,5 @@
+import { getNotes } from "@/lib/content/notes.server";
+import { NoteCard } from "@/components/note-card";
 import Link from "next/link";
 import { getProjects } from "@/lib/content/repository.server";
 import { getLocale } from "@/lib/locale.server";
@@ -173,7 +175,15 @@ export default async function Home({
       <section className="container section section-rule">
         <p className="eyebrow muted">{t.notesLabel}</p>
         <h2 className="section-title">{t.notesTitle}</h2>
-        <p className="muted">{t.notesEmpty}</p>
+        {(await getNotes(locale)).length ? (
+          <div className="notes-grid">
+            {(await getNotes(locale)).slice(0, 2).map((note) => (
+              <NoteCard key={note.slug} note={note} locale={locale} />
+            ))}
+          </div>
+        ) : (
+          <p className="muted">{t.notesEmpty}</p>
+        )}
         <Link className="text-link" href={url("/notes")}>
           {t.viewNotes}
         </Link>

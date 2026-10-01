@@ -1,3 +1,4 @@
+import { AnalyticsConsent } from "./analytics-consent";
 import Link from "next/link";
 import { site } from "@/config/site";
 import { dictionaries } from "@/config/messages";
@@ -17,6 +18,7 @@ export function Footer({ locale }: { locale: Locale }) {
         <br />
         <span className="muted">{t.footerEnd}</span>
       </p>
+      <AnalyticsConsent locale={locale} />
     </footer>
   );
 }
